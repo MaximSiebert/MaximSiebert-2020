@@ -2,26 +2,22 @@
 	var time = '';
 	function updateClock() {
 		var now = new Date(), // current date
-				months = ['January', 'February', '...'],
 				hour = now.getHours(),
 				minutes = now.getMinutes(),
-				seconds = now.getSeconds(),
 				sep = ':',
-				ampm = 'AM';
+				ampm = 'am';
 		
 		if (hour > 12) {
 				hour -= 12;
-				ampm = 'PM';
+				ampm = 'pm';
 		}
 				
 		minutes = minutes < 10 ? '0' + minutes : minutes;
-		seconds = seconds < 10 ? '0' + seconds : seconds;
 		hour = hour % 12;
 		hour = hour ? hour : 12; // the hour '0' should be '12'
 
-
 		// set the content of the element with the ID time to the formatted string
-		time = hour + sep + minutes + sep + seconds + ' ' + ampm;
+		time = hour + sep + minutes + ' ' + ampm;
 
 		// call this function again in 1000ms
 		setTimeout(updateClock, 1000);
@@ -33,7 +29,7 @@
 <nav class="px-4 py-3 flex items-center sticky top-0 w-full bg-white">
 	<h1 class="w-2/12">Maxim Siebert</h1>
 	<p class="w-8/12">Designer & Developer</p>
-	<p class="w-2/12 ml-auto text-right">Toronto / {time}</p>
+	<p class="w-2/12 ml-auto text-right">Toronto — {time}</p>
 	<!-- <ul>
 		<li><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">home</a></li>
 		<li><a aria-current="{segment === 'about' ? 'page' : undefined}" href="about">about</a></li>

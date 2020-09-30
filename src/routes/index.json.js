@@ -1,11 +1,21 @@
-import projects from './_projects.js';
+import work from './_projects.js';
+import jobs from './_experiences.js';
 
-const contents = JSON.stringify(projects.map(project => {
+const projects = JSON.stringify(work.map(project => {
 	return {
 		title: project.title,
 		role: project.role,
-		date: project.date,
+		year: project.year,
 		url: project.url
+	};
+}));
+
+const experiences = JSON.stringify(jobs.map(experience => {
+	return {
+		title: experience.title,
+		role: experience.role,
+		date: experience.date,
+		url: experience.url
 	};
 }));
 
@@ -14,5 +24,5 @@ export function get(req, res) {
 		'Content-Type': 'application/json'
 	});
 
-	res.end(contents);
+	res.end(projects);
 }
