@@ -1,4 +1,4 @@
-const work = [
+const content = [
 	{
 		title: 'Vena Solutions',
 		role: 'Developer',
@@ -25,4 +25,4 @@ const work = [
   }
 ];
 
-export default work;
+export default content;

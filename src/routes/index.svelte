@@ -1,16 +1,21 @@
-<script context="module">
-	export function preload() {
-		return this.fetch(`index.json`)
-			.then(r => r.json())
-			.then(projects => {
-				return { projects };
-			})
-	}
-</script>
-
 <script>
+	import {onMount} from 'svelte'
 	import Project from '../components/Project.svelte';
-	export let projects;
+
+	let projects = [];
+	let experiences = [];
+	
+	onMount(async () => {
+		// Projects
+		const projectsContent = await fetch(`projects.json`)
+		const projectsJson = await projectsContent.json()
+		projects = projectsJson
+
+		// Experiences
+		const experiencesContent = await fetch(`experiences.json`)
+		const experiencesJson = await experiencesContent.json()
+		experiences = experiencesJson
+	});
 </script>
 
 <svelte:head>
@@ -45,6 +50,18 @@
 			role={project.role}
 			year={project.year}
 			url={project.url}
+		/>
+	{/each}
+</div>
+
+
+<div class="w-full ml-auto mb-32">
+	{#each experiences as experience}
+		<Project
+			title={experience.title}
+			role={experience.role}
+			year={experience.date}
+			url={experience.url}
 		/>
 	{/each}
 </div>

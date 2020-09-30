@@ -1,4 +1,4 @@
-const jobs = [
+const content = [
 	{
 		title: 'Planetary',
 		role: 'Lead Designer',
@@ -13,4 +13,4 @@ const jobs = [
   }
 ];
 
-export default jobs;
+export default content;
