@@ -1,3 +1,19 @@
+<script context="module">
+	const getProject = function preload({ params, query }) {
+		return this.fetch(`content/projects.json`).then(r => r.json()).then(projects => {
+			return { projects };
+		});
+	}
+
+	const getExperiences = function preload({ params, query }) {
+		return this.fetch(`content/experiences.json`).then(r => r.json()).then(experiences => {
+			return { experiences };
+		});
+	}
+
+	export {getProject, getExperiences}
+</script>
+
 <script>
 	import {onMount} from 'svelte'
 	import Carousel from '@beyonk/svelte-carousel'
@@ -5,7 +21,7 @@
 	import LineItem from '../components/LineItem.svelte';
 	import TableHead from '../components/TableHead.svelte';
 
-	let projects = [];
+	export let projects;
 	let experiences = [];
 	let collaborators = [];
 	
