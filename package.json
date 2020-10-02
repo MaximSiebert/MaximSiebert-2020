@@ -12,10 +12,12 @@
   "dependencies": {
     "compression": "^1.7.1",
     "polka": "next",
+    "postcss-cli": "^8.0.0",
     "sirv": "^1.0.0",
     "tailwindcss": "^1.8.10"
   },
   "devDependencies": {
+    "@beyonk/svelte-carousel": "^2.8.0",
     "sapper": "^0.28.0",
     "svelte": "^3.17.3",
     "svelte-loader": "^2.9.0",

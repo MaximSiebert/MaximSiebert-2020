@@ -7,7 +7,7 @@
 				sep = ':',
 				ampm = 'am';
 		
-		if (hour > 12) {
+		if (hour >= 12) {
 				hour -= 12;
 				ampm = 'pm';
 		}
@@ -26,14 +26,17 @@
 	updateClock(); // initial call
 </script>
 
-<nav class="px-4 py-3 flex items-center sticky top-0 w-full bg-white">
-	<h1 class="w-2/12">Maxim Siebert</h1>
-	<p class="w-8/12">Designer & Developer</p>
-	<p class="w-2/12 ml-auto text-right">Toronto — {time}</p>
-	<!-- <ul>
-		<li><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">home</a></li>
-		<li><a aria-current="{segment === 'about' ? 'page' : undefined}" href="about">about</a></li>
-
-		<li><a rel=prefetch aria-current="{segment === 'blog' ? 'page' : undefined}" href="blog">blog</a></li>
-	</ul> -->
+<nav class="px-4 py-3 flex items-baseline top-0 w-full bg-white uppercase text-xs tracking-wider font-medium">
+	<h1 class="lg:w-2/12 w-1/2">Maxim Siebert</h1>
+	<div class="lg:w-10/12 w-1/2 flex flex-wrap text-gray-600">
+		<div class="lg:w-4/12 w-full">
+			<a class="block hover:text-black" href="mailto:maxim@hey.com">Email</a>
+			<a class="block hover:text-black" href="https://twitter.com/MaximSiebert" target="_blank" rel="noopener noreferrer">Twitter</a>
+		</div>
+		<div class="lg:w-4/12 w-full">
+			<a class="block hover:text-black" href="https://dribbble.com/MaximSiebert" target="_blank" rel="noopener noreferrer">Dribbble</a>
+			<a class="block hover:text-black" href="https://www.linkedin.com/in/maximsiebert/" target="_blank" rel="noopener noreferrer">Linkedin</a>
+		</div>
+		<p class="lg:block hidden w-4/12">Toronto — {time}</p>
+	</div>
 </nav>

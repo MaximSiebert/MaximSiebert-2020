@@ -11,6 +11,11 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.-mt-1 { 
-  margin-top: -2px;
+.numerator {
+	font-feature-settings: 'numr' 1;
+}
+
+.slide-content {
+	width: auto;
+	height: 16rem;
 }

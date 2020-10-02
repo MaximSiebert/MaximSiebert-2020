@@ -14,7 +14,10 @@ module.exports = {
   },
   variants: {
     borderWidth: ['responsive', 'last'],
+    padding: ['responsive', 'last', 'even'],
+    width: ['responsive', 'last', 'even', 'odd'],
     textColor: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
+    textAlign: ['responsive', 'even'],
   },
   plugins: [],
 }
